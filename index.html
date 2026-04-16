@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RefCase — Reference Management Platform</title>
+  <meta name="description" content="RefCase automates the entire professional reference process — from request to report — so recruiters can focus on placing great candidates, not chasing paperwork." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="rc-nav">
+    <a href="/" class="rc-logo">
+      <div class="rc-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none"/>
+          <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      RefCase
+    </a>
+    <ul class="rc-nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#" class="rc-nav-cta">Get Started Free</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="rc-hero">
+    <div class="rc-hero-left">
+      <div class="rc-hero-tag">
+        <div class="rc-hero-tag-dot"></div>
+        Reference Management Platform
+      </div>
+      <h1 class="rc-hero-h1">References that<br><em>close the deal</em></h1>
+      <p class="rc-hero-sub">RefCase automates the entire professional reference process — from request to report — so recruiters can focus on placing great candidates, not chasing paperwork.</p>
+      <div class="rc-hero-actions">
+        <a href="#" class="rc-btn-primary">Start Free Trial</a>
+        <a href="#how-it-works" class="rc-btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <polygon points="6.5,5 11,8 6.5,11" fill="currentColor"/>
+          </svg>
+          See how it works
+        </a>
+      </div>
+      <div class="rc-hero-social-proof">
+        <div class="rc-avatars">
+          <div class="rc-avatar" style="background:#0d9488">MK</div>
+          <div class="rc-avatar" style="background:#1e3a5f">SR</div>
+          <div class="rc-avatar" style="background:#7c3aed">AT</div>
+          <div class="rc-avatar" style="background:#b45309">LC</div>
+        </div>
+        <div class="rc-social-text">
+          <strong>2,400+ recruiters</strong> use RefCase<br>
+          to close positions 3× faster
+        </div>
+      </div>
+    </div>
+
+    <div class="rc-hero-right">
+      <div class="rc-hero-bg-dots"></div>
+      <div class="rc-hero-bg-glow"></div>
+      <div class="rc-hero-bg-glow2"></div>
+      <div class="rc-dashboard">
+        <div class="rc-db-header">
+          <div class="rc-db-dots">
+            <div class="rc-db-dot" style="background:#ff5f57"></div>
+            <div class="rc-db-dot" style="background:#febc2e"></div>
+            <div class="rc-db-dot" style="background:#28c840"></div>
+          </div>
+          <div class="rc-db-title">RefCase — Active Cases</div>
+          <div style="width:60px"></div>
+        </div>
+        <div class="rc-db-body">
+          <div class="rc-db-stat-row">
+            <div class="rc-db-stat">
+              <div class="rc-db-stat-num">47</div>
+              <div class="rc-db-stat-label">Active Cases</div>
+            </div>
+            <div class="rc-db-stat">
+              <div class="rc-db-stat-num amber">12</div>
+              <div class="rc-db-stat-label">Awaiting</div>
+            </div>
+            <div class="rc-db-stat">
+              <div class="rc-db-stat-num teal">31</div>
+              <div class="rc-db-stat-label">Completed</div>
+            </div>
+          </div>
+          <div class="rc-db-section-label">Recent References</div>
+          <div class="rc-db-ref-row">
+            <div class="rc-db-ref-avatar" style="background:#0d9488">DW</div>
+            <div class="rc-db-ref-info">
+              <div class="rc-db-ref-name">Dr. Warren, Paul</div>
+              <div class="rc-db-ref-role">VP Engineering · TechNova</div>
+            </div>
+            <div class="rc-db-badge completed">Completed</div>
+          </div>
+          <div class="rc-db-ref-row">
+            <div class="rc-db-ref-avatar" style="background:#7c3aed">RL</div>
+            <div class="rc-db-ref-info">
+              <div class="rc-db-ref-name">Rosario, Linda</div>
+              <div class="rc-db-ref-role">Director · Meridian Group</div>
+            </div>
+            <div class="rc-db-badge pending">Pending</div>
+          </div>
+          <div class="rc-db-ref-row">
+            <div class="rc-db-ref-avatar" style="background:#b45309">AJ</div>
+            <div class="rc-db-ref-info">
+              <div class="rc-db-ref-name">Abara, James</div>
+              <div class="rc-db-ref-role">CTO · Stratum Inc.</div>
+            </div>
+            <div class="rc-db-badge sent">Sent</div>
+          </div>
+          <div class="rc-db-ref-row">
+            <div class="rc-db-ref-avatar" style="background:#1e3a5f">SK</div>
+            <div class="rc-db-ref-info">
+              <div class="rc-db-ref-name">Sen, Kavya</div>
+              <div class="rc-db-ref-role">Head of People · Lattice</div>
+            </div>
+            <div class="rc-db-badge completed">Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="rc-trust-bar">
+    <span class="rc-trust-label">Trusted by teams at</span>
+    <div class="rc-trust-companies">
+      <span class="rc-trust-company">Meridian Talent</span>
+      <span class="rc-trust-company">Stratum Staffing</span>
+      <span class="rc-trust-company">ClearPath HR</span>
+      <span class="rc-trust-company">NovaBridge</span>
+      <span class="rc-trust-company">Vantage Search</span>
+      <span class="rc-trust-company">Alderton &amp; Co</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features" class="rc-features">
+    <div class="rc-features-header">
+      <div>
+        <span class="rc-section-tag">Features</span>
+        <h2 class="rc-section-h2">Everything you need to manage references at scale</h2>
+      </div>
+      <p class="rc-section-sub">Stop relying on phone tag and manual follow-ups. RefCase gives your team a single workspace to collect, track, and report on professional references.</p>
+    </div>
+    <div class="rc-features-grid">
+      <div class="rc-feature-card">
+        <div class="rc-feature-icon" style="background:rgba(13,148,136,0.12);color:#0d9488">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 4C4 2.9 4.9 2 6 2h10c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M8 10h6M8 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="rc-feature-h3">Automated Requests</h3>
+        <p class="rc-feature-p">Send professional reference request emails in one click. Customizable templates adapt to any role, seniority level, or industry automatically.</p>
+      </div>
+      <div class="rc-feature-card">
+        <div class="rc-feature-icon" style="background:rgba(232,160,32,0.12);color:#c8820a">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="rc-feature-h3">Real-Time Tracking</h3>
+        <p class="rc-feature-p">Know exactly when your reference requests are opened, started, and submitted. Automated reminders reduce follow-up time by 78%.</p>
+      </div>
+      <div class="rc-feature-card">
+        <div class="rc-feature-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="3" y="3" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M7 11l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="rc-feature-h3">Smart Questionnaires</h3>
+        <p class="rc-feature-p">Pre-built and fully customizable questionnaire templates. Ask the right questions for technical roles, leadership positions, and everything between.</p>
+      </div>
+      <div class="rc-feature-card">
+        <div class="rc-feature-icon" style="background:rgba(10,22,40,0.06);color:#1e3a5f">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="2" y="2" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M4 16l4-4 3 3 4-5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="rc-feature-h3">Insight Reports</h3>
+        <p class="rc-feature-p">Generate shareable, beautifully formatted reference reports. Synthesized insights help hiring managers make confident, informed decisions faster.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="rc-hiw">
+    <div class="rc-hiw-bg"></div>
+    <div class="rc-hiw-inner">
+      <div class="rc-hiw-header">
+        <span class="rc-section-tag">How It Works</span>
+        <h2 class="rc-section-h2">From request to report in 3 steps</h2>
+        <p class="rc-section-sub">RefCase handles the entire reference workflow so your team spends less time coordinating and more time placing great talent.</p>
+      </div>
+      <div class="rc-steps">
+        <div class="rc-step">
+          <div class="rc-step-num">1</div>
+          <h3>Create a case</h3>
+          <p>Add a candidate, select references, and choose your questionnaire template. RefCase handles formatting and sends professional requests automatically.</p>
+        </div>
+        <div class="rc-step">
+          <div class="rc-step-num">2</div>
+          <h3>Track responses</h3>
+          <p>Monitor submission status in real time. Automated reminders nudge outstanding references, so you never have to chase manually again.</p>
+        </div>
+        <div class="rc-step">
+          <div class="rc-step-num">3</div>
+          <h3>Share the report</h3>
+          <p>Download or share a polished reference report with your hiring team. Synthesized scores and verbatim responses — all in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="rc-pricing">
+    <div class="rc-pricing-header">
+      <span class="rc-section-tag">Pricing</span>
+      <h2 class="rc-section-h2">Plans that grow with your team</h2>
+      <p class="rc-section-sub">Start free. Upgrade when you're ready. No contracts, no surprises.</p>
+    </div>
+    <div class="rc-pricing-grid">
+      <!-- Starter -->
+      <div class="rc-plan rc-plan-basic">
+        <div class="rc-plan-name">Starter</div>
+        <div class="rc-plan-price">$0</div>
+        <div class="rc-plan-period">Free forever</div>
+        <div class="rc-plan-divider"></div>
+        <ul class="rc-plan-features">
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 5 active cases</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>3 questionnaire templates</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Email reference requests</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF report export</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>7-day response tracking</li>
+        </ul>
+        <button class="rc-plan-btn">Get started free</button>
+      </div>
+      <!-- Pro -->
+      <div class="rc-plan rc-plan-pro">
+        <div class="rc-plan-badge">Most Popular</div>
+        <div class="rc-plan-name">Professional</div>
+        <div class="rc-plan-price">$49<span style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:400">/mo</span></div>
+        <div class="rc-plan-period">per recruiter, billed monthly</div>
+        <div class="rc-plan-divider"></div>
+        <ul class="rc-plan-features">
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited active cases</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom questionnaire builder</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated reminders</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority response tracking</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Team collaboration tools</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ATS integrations</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#5eead4" opacity="0.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced analytics</li>
+        </ul>
+        <button class="rc-plan-btn">Start 14-day free trial</button>
+      </div>
+      <!-- Enterprise -->
+      <div class="rc-plan rc-plan-enterprise">
+        <div class="rc-plan-name">Enterprise</div>
+        <div class="rc-plan-price">Custom</div>
+        <div class="rc-plan-period">volume &amp; annual pricing</div>
+        <div class="rc-plan-divider"></div>
+        <ul class="rc-plan-features">
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Professional</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SSO &amp; SAML authentication</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated account manager</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom SLA &amp; uptime</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>GDPR &amp; compliance package</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>White-label reports</li>
+          <li class="rc-plan-feature"><svg class="rc-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#0d9488" opacity="0.15"/><path d="M5 8l2.5 2.5L11 5.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>API access</li>
+        </ul>
+        <button class="rc-plan-btn">Talk to sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="rc-testimonials">
+    <div class="rc-testimonials-inner">
+      <div class="rc-testimonials-header">
+        <span class="rc-section-tag">Testimonials</span>
+        <h2 class="rc-section-h2">Recruiters who switched, stayed</h2>
+      </div>
+      <div class="rc-testimonials-grid">
+        <div class="rc-testimonial">
+          <div class="rc-stars">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+          </div>
+          <div class="rc-quote-mark">"</div>
+          <p class="rc-testimonial-text">RefCase cut our reference turnaround from 11 days to just under 3. The automated reminders alone saved our team hours every week — we're not chasing anyone anymore. It's changed how we close senior roles entirely.</p>
+          <div class="rc-testimonial-author">
+            <div class="rc-author-avatar" style="background:#0d9488">MK</div>
+            <div>
+              <div class="rc-author-name">Miriam Kowalczyk</div>
+              <div class="rc-author-title">Head of Talent · TechNova</div>
+            </div>
+          </div>
+        </div>
+        <div class="rc-testimonial">
+          <div class="rc-stars">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+          </div>
+          <div class="rc-quote-mark">"</div>
+          <p class="rc-testimonial-text">The report format is something I send to clients with full confidence. It looks polished and professional — candidates and hiring managers both notice.</p>
+          <div class="rc-testimonial-author">
+            <div class="rc-author-avatar" style="background:#7c3aed">SR</div>
+            <div>
+              <div class="rc-author-name">Stefan Riedel</div>
+              <div class="rc-author-title">Partner · Alderton Search</div>
+            </div>
+          </div>
+        </div>
+        <div class="rc-testimonial">
+          <div class="rc-stars">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#e8a020"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z"/></svg>
+          </div>
+          <div class="rc-quote-mark">"</div>
+          <p class="rc-testimonial-text">We onboarded our entire 14-person team in under an hour. The ATS integration was seamless — it plugged right into Greenhouse with zero configuration.</p>
+          <div class="rc-testimonial-author">
+            <div class="rc-author-avatar" style="background:#b45309">LC</div>
+            <div>
+              <div class="rc-author-name">Lena Choi</div>
+              <div class="rc-author-title">Recruiting Ops · ClearPath HR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="rc-cta-banner">
+    <div class="rc-cta-banner-bg"></div>
+    <div class="rc-cta-banner-inner">
+      <h2>Start closing cases faster today</h2>
+      <p>Join 2,400+ recruiting professionals who use RefCase to collect references in days, not weeks.</p>
+      <div class="rc-cta-banner-actions">
+        <a href="#" class="rc-btn-amber">Start Free Trial</a>
+        <a href="#" class="rc-btn-ghost">Book a demo</a>
+      </div>
+      <p class="rc-cta-note">No credit card required · Free forever plan available</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rc-footer">
+    <div class="rc-footer-top">
+      <div class="rc-footer-brand">
+        <div class="rc-footer-logo">
+          <div class="rc-footer-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.7"/>
+              <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.7"/>
+              <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.3"/>
+            </svg>
+          </div>
+          RefCase
+        </div>
+        <p>Professional reference management for modern recruiting teams. Automate requests, track responses, and deliver polished reports — all in one place.</p>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rc-footer-bottom">
+      <div class="rc-footer-copy">© 2024 RefCase. All rights reserved.</div>
+      <div class="rc-footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
