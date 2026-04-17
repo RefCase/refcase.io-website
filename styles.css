@@ -1,6 +1,6 @@
 /* =========================================================
-   RefCase — styles.css
-   GitHub Pages ready · no build tools required
+   RefCase â€” styles.css
+   GitHub Pages ready Â· no build tools required
    ========================================================= */
 
 /* --- Reset & Base --- */
@@ -818,4 +818,189 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 @media (max-width: 600px) {
   .rc-nav-links li:not(:last-child) { display: none; }
   .rc-footer-top { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   HERO DASHBOARD â€” updated for match UI
+   ========================================================= */
+.rc-db-match-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(232,160,32,0.1);
+  border: 1px solid rgba(232,160,32,0.25);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.75rem;
+}
+.rc-db-match-bar strong { color: white; }
+.rc-db-match-badge {
+  margin-left: auto;
+  background: rgba(232,160,32,0.2);
+  color: var(--amber-light);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  border: 1px solid rgba(232,160,32,0.3);
+}
+.rc-db-filter-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.rc-db-filter {
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+}
+.rc-db-filter.active {
+  background: rgba(13,148,136,0.15);
+  border-color: rgba(13,148,136,0.3);
+  color: #5eead4;
+}
+
+/* =========================================================
+   THE PROBLEM â€” MOMENT SECTION
+   ========================================================= */
+.rc-moment-section {
+  padding: 7rem 4rem;
+  background: var(--cream);
+}
+.rc-moment-inner { max-width: 900px; margin: 0 auto; }
+
+.rc-moment-callout {
+  background: var(--cream-dark);
+  border-left: 3px solid var(--amber);
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  margin: 2rem auto 0;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.rc-moment-line  { font-size: 1rem; color: var(--slate); line-height: 1.5; }
+.rc-moment-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--navy);
+  font-style: italic;
+  line-height: 1.2;
+}
+.rc-moment-reply {
+  font-size: 1rem;
+  color: var(--slate);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Problem cards */
+.rc-problems-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.rc-problem-card {
+  background: white;
+  border: 1px solid rgba(10,22,40,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.rc-problem-card:hover { box-shadow: 0 12px 32px rgba(10,22,40,0.07); transform: translateY(-3px); }
+.rc-problem-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(10,22,40,0.08);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.rc-problem-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+.rc-problem-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+.rc-problem-card p { font-size: 0.87rem; color: var(--slate); line-height: 1.65; }
+
+/* Slack mess block */
+.rc-mess-block { margin-top: 5rem; }
+.rc-slack-mock {
+  max-width: 620px;
+  margin: 0 auto;
+  background: #1a1d21;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+.rc-slack-msg { display: flex; gap: 0.85rem; align-items: flex-start; }
+.rc-slack-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: white;
+}
+.rc-slack-body { flex: 1; }
+.rc-slack-name { font-size: 0.82rem; font-weight: 700; color: white; margin-bottom: 0.2rem; }
+.rc-slack-time { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 400; margin-left: 0.4rem; }
+.rc-slack-text { font-size: 0.87rem; color: rgba(255,255,255,0.75); line-height: 1.55; }
+.rc-slack-label {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   FIX SECTION
+   ========================================================= */
+.rc-fix-section {
+  background: var(--teal);
+  padding: 4rem;
+  text-align: center;
+}
+.rc-fix-inner { max-width: 700px; margin: 0 auto; }
+.rc-fix-section .rc-section-h2 { color: white; }
+
+/* =========================================================
+   RESPONSIVE â€” new sections
+   ========================================================= */
+@media (max-width: 900px) {
+  .rc-moment-section { padding: 5rem 2rem; }
+  .rc-moment-callout { padding: 2rem; }
+  .rc-problems-grid  { grid-template-columns: 1fr; }
+  .rc-fix-section    { padding: 3rem 2rem; }
 }
