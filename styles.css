@@ -233,10 +233,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* Hero Right */
 .rc-hero-right {
   display: flex;
-  height: 100%;
   position: relative;
   align-items: center;
   justify-content: center;
+  align-self: stretch;        /* ← fills the full grid row */
+  min-height: 90vh;           /* ← fallback to match hero height */
   background: radial-gradient(
       circle at 70% 30%,
       rgba(168, 85, 247, 0.25),
@@ -248,9 +249,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
       #1b2a6b 50%,
       #3b1d5a 100%
     );
-   
 }
-
+.rc-demo {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
 .rc-hero-bg-dots {
   position: absolute;
   inset: 0;
