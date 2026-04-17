@@ -20,7 +20,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 /* --- Design Tokens --- */
 :root {
-  --navy:        #f5f7fb;
+  --navy:        #0a1628;
   --navy-mid:    #142240;
   --navy-light:  #1e3a5f;
   --amber:       #e8a020;
