@@ -110,47 +110,91 @@
           <div style="width:60px"></div>
         </div>
         <div class="rc-db-body">
-          <div class="rc-db-match-bar">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0">
-              <circle cx="7" cy="7" r="6" stroke="#e8a020" stroke-width="1.3"/>
-              <path d="M5 7l1.5 1.5L9 5" stroke="#e8a020" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Magic Match — <strong>acmecorp.com</strong></span>
-            <span class="rc-db-match-badge">3 matches</span>
-          </div>
-          <div class="rc-db-filter-row">
-            <span class="rc-db-filter">SaaS</span>
-            <span class="rc-db-filter">250–1k employees</span>
-            <span class="rc-db-filter active">vs. Salesforce</span>
-          </div>
-          <div class="rc-db-section-label">Top Matches</div>
-          <div class="rc-db-ref-row">
-            <div class="rc-db-ref-avatar" style="background:#0d9488">TN</div>
-            <div class="rc-db-ref-info">
-              <div class="rc-db-ref-name">TechNova — Replaced Salesforce</div>
-              <div class="rc-db-ref-role">SaaS · 600 employees · EMEA</div>
-            </div>
-            <div class="rc-db-badge completed">98%</div>
-          </div>
-          <div class="rc-db-ref-row">
-            <div class="rc-db-ref-avatar" style="background:#7c3aed">MG</div>
-            <div class="rc-db-ref-info">
-              <div class="rc-db-ref-name">Meridian Group — SMB expansion</div>
-              <div class="rc-db-ref-role">B2B SaaS · 300 employees · DACH</div>
-            </div>
-            <div class="rc-db-badge pending">87%</div>
-          </div>
-          <div class="rc-db-ref-row">
-            <div class="rc-db-ref-avatar" style="background:#1e3a5f">SI</div>
-            <div class="rc-db-ref-info">
-              <div class="rc-db-ref-name">Stratum Inc. — Outbound scale</div>
-              <div class="rc-db-ref-role">Enterprise SaaS · 800 employees</div>
-            </div>
-            <div class="rc-db-badge sent">81%</div>
-          </div>
+
+  <!-- Top Bar -->
+  <div class="rc-db-topbar">
+    <div class="rc-db-brand">RefCase</div>
+    <div class="rc-db-nav">
+      <span>Admin</span>
+      <span>Favorites</span>
+      <span>Settings</span>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="rc-db-search">
+    <input placeholder="Search reference cases..." />
+    <button class="rc-db-magic">Magic Match</button>
+    <button class="rc-db-clear">Clear</button>
+  </div>
+
+  <!-- Filters -->
+  <div class="rc-db-filters">
+    <div class="rc-db-select">Industry ▾</div>
+    <div class="rc-db-select">Company Size ▾</div>
+    <div class="rc-db-select">ERP Partner ▾</div>
+    <div class="rc-db-select">Region ▾</div>
+  </div>
+
+  <!-- Section header -->
+  <div class="rc-db-section">
+    <div>Reference Cases</div>
+    <div class="rc-db-sort">Sort ▾</div>
+  </div>
+
+  <!-- Cards -->
+  <div class="rc-db-cards">
+
+    <div class="rc-db-card">
+      <div class="rc-db-card-header">
+        <div class="rc-db-logo">A</div>
+        <div>
+          <div class="rc-db-card-title">AstraZeneca</div>
+          <div class="rc-db-card-sub">Healthcare • Pharmaceutical</div>
         </div>
       </div>
+
+      <p class="rc-db-desc">
+        British-Swedish pharmaceutical company developing life-changing medicines.
+      </p>
+
+      <div class="rc-db-tags">
+        <span class="green">SAP S/4HANA</span>
+        <span class="pink">Replaced Bank Cards</span>
+      </div>
+
+      <div class="rc-db-meta">
+        <span>83k employees</span>
+        <span>UK</span>
+      </div>
     </div>
+
+    <div class="rc-db-card">
+      <div class="rc-db-card-header">
+        <div class="rc-db-logo lego">L</div>
+        <div>
+          <div class="rc-db-card-title">Lego</div>
+          <div class="rc-db-card-sub">Manufacturing</div>
+        </div>
+      </div>
+
+      <p class="rc-db-desc">
+        Danish toy company known for iconic plastic construction bricks.
+      </p>
+
+      <div class="rc-db-tags">
+        <span class="green">SAP</span>
+        <span class="pink">Replaced Pleo</span>
+      </div>
+
+      <div class="rc-db-meta">
+        <span>25k employees</span>
+        <span>Denmark</span>
+      </div>
+    </div>
+
+  </div>
+</div>
   </section>
 
   <!-- ===================== THE PROBLEM ===================== -->
