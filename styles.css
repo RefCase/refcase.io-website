@@ -110,6 +110,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
+  align-items: center;
 }
 .rc-hero-left {
   padding: 5rem 3rem 5rem 4rem;
