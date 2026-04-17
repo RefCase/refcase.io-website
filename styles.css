@@ -451,11 +451,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   width: 100%;
   max-width: 520px;
 
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.08); /* increase from 0.05 */
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(18px);
 
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 18px;
 
   overflow: hidden;
