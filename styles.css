@@ -233,6 +233,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* Hero Right */
 .rc-hero-right {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   background: radial-gradient(
