@@ -71,6 +71,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   color: var(--navy);
   letter-spacing: -0.02em;
 }
+.rc-logo-img {
+  height: 32px; /* adjust as needed */
+  width: auto;
+  display: block;
+}
 .rc-logo-icon {
   width: 32px;
   height: 32px;
