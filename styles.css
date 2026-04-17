@@ -20,12 +20,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 /* --- Design Tokens --- */
 :root {
-  --navy:        #0a1628;
+  --navy:        #f5f7fb;
   --navy-mid:    #142240;
   --navy-light:  #1e3a5f;
   --amber:       #e8a020;
   --amber-light: #f5c55a;
-  --teal:        #0d9488;
+  --teal:        #c877e1;
   --cream:       #faf7f2;
   --cream-dark:  #f0ebe1;
   --slate:       #647491;
