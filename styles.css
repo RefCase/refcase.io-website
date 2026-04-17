@@ -247,24 +247,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     );
    
 }
-.rc-demo {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 18px;
 
-  /* 👇 GLASS EFFECT */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  box-shadow: 
-    0 20px 60px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.1);
-
-  overflow: hidden;
-}
 .rc-hero-bg-dots {
   position: absolute;
   inset: 0;
@@ -293,15 +276,24 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* Dashboard Mockup */
 .rc-dashboard {
   width: 100%;
-  max-width: 460px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px;
+  max-width: 520px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+
   overflow: hidden;
   position: relative;
   z-index: 2;
+
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+
   animation: fadeSlideUp 0.8s 0.3s ease both;
-  box-shadow: 0 32px 64px rgba(0,0,0,0.4);
 }
 .rc-db-header {
   background: rgba(255,255,255,0.08);
