@@ -1462,3 +1462,157 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background: rgba(255,255,255,0.04);
   display: flex; align-items: center; justify-content: center;
 }
+
+/* =========================================================
+   CONVERSATION CALLOUT
+   ========================================================= */
+.rc-convo-wrap {
+  max-width: 680px;
+  margin: 2rem auto 0;
+  font-family: 'Karla', sans-serif;
+}
+.rc-convo-context {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.rc-convo-context span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cream-dark);
+  border: 1px solid rgba(10,22,40,0.1);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.rc-live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  flex-shrink: 0;
+  animation: rc-livepulse 1.5s ease-in-out infinite;
+}
+@keyframes rc-livepulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.rc-msg-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+.rc-msg-right { flex-direction: row-reverse; }
+.rc-avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  flex-shrink: 0;
+  color: white;
+}
+.rc-avatar-prospect { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+.rc-avatar-rep      { background: linear-gradient(135deg, #10b981, #059669); }
+.rc-msg-col {
+  display: flex; flex-direction: column; gap: 3px;
+  max-width: 72%;
+}
+.rc-msg-right .rc-msg-col { align-items: flex-end; }
+.rc-msg-name {
+  font-size: 0.7rem;
+  color: var(--slate-light);
+  padding: 0 4px;
+}
+.rc-bubble {
+  padding: 11px 15px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  background: white;
+  border: 1px solid rgba(10,22,40,0.08);
+  border-bottom-left-radius: 4px;
+}
+.rc-msg-right .rc-bubble {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  border: none;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 4px;
+}
+.rc-bubble-pain {
+  background: #fffbeb !important;
+  border-color: rgba(232,160,32,0.4) !important;
+  color: #78350f !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 16px !important;
+}
+.rc-bubble-bad {
+  background: #fff5f5 !important;
+  border-color: rgba(239,68,68,0.25) !important;
+  color: #7f1d1d !important;
+  font-style: italic;
+}
+.rc-typing {
+  display: flex; gap: 4px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid rgba(10,22,40,0.08);
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  width: fit-content;
+}
+.rc-typing span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--slate-light);
+  animation: rc-bounce 1.2s ease-in-out infinite;
+}
+.rc-typing span:nth-child(2) { animation-delay: 0.2s; }
+.rc-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes rc-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+.rc-scramble-note {
+  margin: 4px 0 6px 44px;
+  font-size: 0.75rem;
+  color: var(--slate-light);
+  font-style: italic;
+}
+.rc-convo-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 1.5rem 0;
+}
+.rc-divider-line { flex: 1; height: 1px; background: rgba(10,22,40,0.08); }
+.rc-divider-label {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--slate-light);
+  white-space: nowrap;
+}
+.rc-outcome-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+.rc-outcome-card {
+  background: #fff5f5;
+  border: 1px solid rgba(239,68,68,0.15);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.rc-outcome-icon { font-size: 1rem; color: #ef4444; }
+.rc-outcome-label { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+.rc-outcome-desc { font-size: 0.78rem; color: var(--slate); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .rc-outcome-row { grid-template-columns: 1fr; }
+  .rc-msg-col { max-width: 85%; }
+}
