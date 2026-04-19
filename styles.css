@@ -706,7 +706,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
    TRUST BAR
    ========================================================= */
 .rc-trust-bar {
-  background: rgba(29, 42, 106, 1)
+  background: rgba(29, 42, 106, 1);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
