@@ -739,7 +739,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .rc-features { padding: 7rem 4rem; max-width: 1200px; margin: 0 auto; }
 .rc-section-tag {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
