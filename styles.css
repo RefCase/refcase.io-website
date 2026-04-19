@@ -1096,7 +1096,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 8px;
 }
 .rc-footer-logo-img {
-  height: 28px;
+  height: 20px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
