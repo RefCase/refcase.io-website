@@ -1095,6 +1095,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   align-items: center;
   gap: 8px;
 }
+.rc-footer-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
 .rc-footer-logo-icon {
   width: 28px;
   height: 28px;
