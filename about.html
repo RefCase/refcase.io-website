@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — RefCase</title>
+  <meta name="description" content="RefCase was built by AEs who felt the pain of searching for customer references at the worst possible moment." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── About page specific styles ── */
+    .ab-hero {
+      background: var(--navy);
+      padding: 7rem 4rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ab-hero-bg {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 80% 40%, rgba(139,92,246,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 15% 70%, rgba(59,130,246,0.12) 0%, transparent 40%);
+    }
+    .ab-hero-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .ab-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative; z-index: 2;
+    }
+    .ab-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.3);
+      color: var(--amber-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeSlideUp 0.6s ease both;
+    }
+    .ab-hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: white;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+      animation: fadeSlideUp 0.6s 0.1s ease both;
+    }
+    .ab-hero-h1 em { font-style: italic; color: var(--teal); }
+    .ab-hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+      max-width: 580px;
+      animation: fadeSlideUp 0.6s 0.2s ease both;
+    }
+
+    /* ── Story section ── */
+    .ab-story {
+      background: var(--cream);
+      padding: 7rem 4rem;
+    }
+    .ab-story-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .ab-story-left { position: sticky; top: 100px; }
+    .ab-story-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .ab-story-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .ab-story-h2 em { font-style: italic; color: var(--teal); }
+    .ab-story-divider {
+      width: 40px; height: 2px;
+      background: var(--amber);
+      margin-top: 1.75rem;
+      border-radius: 2px;
+    }
+    .ab-story-right { display: flex; flex-direction: column; gap: 2.5rem; }
+    .ab-para {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+    .ab-para strong { color: var(--navy); font-weight: 600; }
+    .ab-pullquote {
+      border-left: 3px solid var(--amber);
+      padding: 1.25rem 1.75rem;
+      background: var(--cream-dark);
+      border-radius: 0 12px 12px 0;
+    }
+    .ab-pullquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    /* ── Values strip ── */
+    .ab-values {
+      background: var(--cream-dark);
+      padding: 5rem 4rem;
+      border-top: 1px solid rgba(10,22,40,0.07);
+      border-bottom: 1px solid rgba(10,22,40,0.07);
+    }
+    .ab-values-inner { max-width: 1100px; margin: 0 auto; }
+    .ab-values-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 3rem;
+      display: block;
+      text-align: center;
+    }
+    .ab-values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5px;
+      background: rgba(10,22,40,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .ab-value-card {
+      background: var(--cream);
+      padding: 2.25rem;
+      transition: background 0.2s;
+    }
+    .ab-value-card:hover { background: white; }
+    .ab-value-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgba(10,22,40,0.07);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .ab-value-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .ab-value-desc {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.65;
+    }
+
+    /* ── Founders strip ── */
+    .ab-founders {
+      background: var(--navy);
+      padding: 6rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ab-founders-bg {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 90% 20%, rgba(139,92,246,0.15) 0%, transparent 50%);
+    }
+    .ab-founders-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .ab-founders-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .ab-founders-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 500;
+      font-style: italic;
+      color: white;
+      line-height: 1.35;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+    .ab-founders-quote em { color: var(--teal); font-style: normal; }
+    .ab-founders-sig {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CTA ── */
+    .ab-cta {
+      background: var(--cream);
+      padding: 6rem 4rem;
+      text-align: center;
+    }
+    .ab-cta-inner { max-width: 560px; margin: 0 auto; }
+    .ab-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .ab-cta p {
+      font-size: 1rem;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+    .ab-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .ab-hero { padding: 5rem 2rem 4rem; }
+      .ab-story { padding: 5rem 2rem; }
+      .ab-story-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .ab-story-left { position: static; }
+      .ab-values { padding: 4rem 2rem; }
+      .ab-values-grid { grid-template-columns: 1fr; }
+      .ab-founders { padding: 4rem 2rem; }
+      .ab-cta { padding: 4rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="rc-nav">
+    <a href="/" class="rc-logo">
+      <img src="refcase_logo.png" alt="RefCase Logo" class="rc-logo-img">
+    </a>
+    <ul class="rc-nav-links">
+      <li><a href="/#how-it-works">Features</a></li>
+      <li><a href="/#problems">Why RefCase</a></li>
+      <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+      <li><a href="about.html" style="color:var(--navy);font-weight:600;">About</a></li>
+      <li><a href="https://www.refcase.io/contact-8" class="rc-nav-cta">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="ab-hero">
+    <div class="ab-hero-bg"></div>
+    <div class="ab-hero-dots"></div>
+    <div class="ab-hero-inner">
+      <div class="ab-tag">Our Story</div>
+      <h1 class="ab-hero-h1">Built by AEs,<br><em>for AEs.</em></h1>
+      <p class="ab-hero-sub">We felt the pain ourselves — the scrambling, the back-and-forth, the missed moment to build trust. So we built the tool we always wished we had.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="ab-story">
+    <div class="ab-story-inner">
+
+      <div class="ab-story-left">
+        <span class="ab-story-label">The Full Story</span>
+        <h2 class="ab-story-h2">A simple frustration<br>became <em>a product</em></h2>
+        <div class="ab-story-divider"></div>
+      </div>
+
+      <div class="ab-story-right">
+
+        <p class="ab-para">
+          RefCase started with a simple frustration: <strong>sales reps waste too much time digging through CRM reports just to find a good customer reference.</strong> As AEs ourselves, we've felt that pain — the delays, the back-and-forth, and the missed opportunity to build trust with a prospect at the right moment.
+        </p>
+
+        <div class="ab-pullquote">
+          <p>"We built RefCase to fix that."</p>
+        </div>
+
+        <p class="ab-para">
+          Our goal is to make customer stories <strong>instantly accessible</strong>. No more hunting through Salesforce, no more outdated spreadsheets, no more improvising customer stories or guessing. Just fast, accurate reference data exactly when you need it — so you can focus on selling, not searching.
+        </p>
+
+        <p class="ab-para">
+          RefCase is built for <strong>modern sales teams who value speed, credibility, and clean workflows</strong>. Whether you're running discovery, preparing a pitch, or trying to close a deal, we want to give you the confidence of having the right story at your fingertips.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="ab-values">
+    <div class="ab-values-inner">
+      <span class="ab-values-label">What we stand for</span>
+      <div class="ab-values-grid">
+        <div class="ab-value-card">
+          <div class="ab-value-num">01</div>
+          <div class="ab-value-title">Speed over scrambling</div>
+          <p class="ab-value-desc">The right reference should take seconds, not a Slack thread and three CRM tabs. We build every feature around getting reps the answer before the moment passes.</p>
+        </div>
+        <div class="ab-value-card">
+          <div class="ab-value-num">02</div>
+          <div class="ab-value-title">Credibility at every stage</div>
+          <p class="ab-value-desc">Buyers trust sellers who know their customers. We make it easy to surface proof that's genuinely relevant — not just the same two stories every rep leans on.</p>
+        </div>
+        <div class="ab-value-card">
+          <div class="ab-value-num">03</div>
+          <div class="ab-value-title">Built for how sales actually works</div>
+          <p class="ab-value-desc">We're not building for the CRM administrator. We're building for the AE in a live call, the BDR in a prospecting sprint, the manager onboarding a new hire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS QUOTE -->
+  <section class="ab-founders">
+    <div class="ab-founders-bg"></div>
+    <div class="ab-founders-inner">
+      <span class="ab-founders-label">Where we're headed</span>
+      <p class="ab-founders-quote">
+        "We're salespeople building a tool we wish we had years ago.<br><em>And we're just getting started.</em>"
+      </p>
+      <p class="ab-founders-sig">— The RefCase Team</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ab-cta">
+    <div class="ab-cta-inner">
+      <h2>See it in action</h2>
+      <p>Book a 20-minute demo and we'll show you how RefCase works with your team's existing customer stories.</p>
+      <div class="ab-cta-actions">
+        <a href="https://calendar.app.google/RXbXHABojoUCLp5w7" class="rc-btn-primary">Book a Demo</a>
+        <a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf" class="rc-btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <polygon points="6.5,5 11,8 6.5,11" fill="currentColor"/>
+          </svg>
+          Install Chrome Extension
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rc-footer">
+    <div class="rc-footer-top">
+      <div class="rc-footer-brand">
+        <div class="rc-footer-logo">
+          <img src="refcase_logo.png" alt="RefCase Logo" class="rc-footer-logo-img">
+        </div>
+        <p>The fastest way to earn buyer trust. Give every rep the right customer story, right when it counts.</p>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.refcase.io">Features</a></li>
+          <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a></li>
+          <li><a href="https://www.refcase.io/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://www.refcase.io/support">Support</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/contact-8">Book a Demo</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf">Chrome Extension</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rc-footer-bottom">
+      <div class="rc-footer-copy">© 2026 by RefCase. All rights reserved.</div>
+      <div class="rc-footer-legal">
+        <a href="https://www.refcase.io/privacy-policy">Privacy Policy</a>
+        <a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
