@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — RefCase</title>
+  <meta name="description" content="How RefCase collects, uses, and protects your data." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Page-level overrides ── */
+    body { background: var(--navy); color: rgba(255,255,255,0.75); }
+
+    /* ── Hero ── */
+    .pg-hero {
+      padding: 6rem 4rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .pg-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(circle, rgba(13,148,136,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pg-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+    }
+    .pg-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+    }
+    .pg-hero h1 em { font-style: italic; color: var(--teal); }
+    .pg-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+    .pg-updated {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .pg-updated-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* ── Divider ── */
+    .pg-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Content body ── */
+    .pg-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 4rem 6rem;
+    }
+
+    /* Section blocks */
+    .pg-section {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .pg-section.visible { opacity: 1; transform: none; }
+    .pg-section:last-child { border-bottom: none; }
+
+    .pg-section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.08);
+      line-height: 1;
+      padding-top: 0.35rem;
+      user-select: none;
+    }
+    .pg-section-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .pg-section-content p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+    .pg-section-content p:last-child { margin-bottom: 0; }
+    .pg-section-content ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin: 0.75rem 0;
+    }
+    .pg-section-content ul li {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .pg-section-content ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      opacity: 0.6;
+      font-size: 0.8rem;
+    }
+    .pg-section-content strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+    .pg-section-content a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+    .pg-section-content a:hover { color: #5eead4; }
+
+    /* Rights grid */
+    .pg-rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .pg-right-pill {
+      background: rgba(13,148,136,0.08);
+      border: 1px solid rgba(13,148,136,0.18);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+    .pg-right-pill-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      margin-bottom: 0.25rem;
+    }
+    .pg-right-pill p {
+      font-size: 0.82rem !important;
+      margin: 0 !important;
+    }
+
+    /* Contact block */
+    .pg-contact-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .pg-contact-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+    .pg-contact-block p { margin: 0 0 1.5rem; font-size: 0.9rem; }
+    .pg-contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: 'Karla', sans-serif;
+      text-decoration: none !important;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .pg-contact-email:hover { background: #0f9e92; transform: translateY(-2px); }
+
+    /* ── Nav overrides for dark bg ── */
+    .rc-nav {
+      background: rgba(10,22,40,0.92);
+      border-bottom-color: rgba(255,255,255,0.07);
+    }
+    .rc-nav-links a { color: rgba(255,255,255,0.5); }
+    .rc-nav-links a:hover { color: white; }
+    .rc-logo { color: white; }
+    .rc-nav-cta { background: rgba(255,255,255,0.1) !important; color: white !important; border: 1px solid rgba(255,255,255,0.15); }
+    .rc-nav-cta:hover { background: rgba(255,255,255,0.18) !important; }
+
+    /* ── Footer tweaks ── */
+    .rc-footer { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    @media (max-width: 700px) {
+      .pg-hero { padding: 5rem 1.5rem 3rem; }
+      .pg-body { padding: 3rem 1.5rem 5rem; }
+      .pg-section { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pg-section-num { font-size: 1.2rem; }
+      .pg-rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="rc-nav">
+    <a href="/" class="rc-logo">
+      <div class="rc-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none"/>
+          <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      RefCase
+    </a>
+    <ul class="rc-nav-links">
+      <li><a href="https://refcase.io/#how-it-works">Features</a></li>
+      <li><a href="https://refcase.io/#problems">Why RefCase</a></li>
+      <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+      <li><a href="https://refcase.io/about.html">About</a></li>
+      <li><a href="https://www.refcase.io/contact-8" class="rc-nav-cta">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pg-hero">
+    <span class="pg-eyebrow">Legal</span>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="pg-hero-sub">We're committed to protecting your data. Here's exactly what we collect, why we collect it, and how you stay in control.</p>
+    <div class="pg-updated">
+      <div class="pg-updated-dot"></div>
+      Last updated: April 25, 2025
+    </div>
+  </section>
+
+  <div class="pg-divider"></div>
+
+  <!-- CONTENT -->
+  <div class="pg-body">
+
+    <div class="pg-section">
+      <div class="pg-section-num">01</div>
+      <div class="pg-section-content">
+        <h2>Introduction</h2>
+        <p>RefCase ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use the RefCase application — a reference management tool designed for SaaS sales professionals.</p>
+        <p>By using RefCase, you agree to the collection and use of information in accordance with this policy.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">02</div>
+      <div class="pg-section-content">
+        <h2>Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li><strong>Account information</strong> — name and email address when you sign up or log in.</li>
+          <li><strong>Usage data</strong> — how you interact with the application, features used, and session duration.</li>
+          <li><strong>Customer reference data</strong> — the case data you upload or input into RefCase (e.g. CSV files). This data is yours and is treated as confidential.</li>
+          <li><strong>Device &amp; browser data</strong> — browser type, operating system, and IP address for security and analytics purposes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">03</div>
+      <div class="pg-section-content">
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and maintain the RefCase application</li>
+          <li>Improve and personalise your experience</li>
+          <li>Send product updates and important notices (you may opt out at any time)</li>
+          <li>Monitor usage for security and to prevent abuse</li>
+          <li>Respond to support requests and troubleshoot issues</li>
+        </ul>
+        <p>We do <strong>not</strong> sell your personal data or your uploaded reference case data to third parties.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">04</div>
+      <div class="pg-section-content">
+        <h2>Your Data &amp; Customer Reference Cases</h2>
+        <p>Any customer reference data you upload to RefCase (e.g. deal names, company names, use cases, outcomes) remains your property. We act as a data processor on your behalf.</p>
+        <p>We do not use your reference case data to train models, serve advertising, or share with other users. You can delete your data at any time by contacting us or using the in-app data management options.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">05</div>
+      <div class="pg-section-content">
+        <h2>Cookies &amp; Tracking</h2>
+        <p>RefCase uses essential cookies to keep you logged in and maintain your session. We may also use analytics cookies (e.g. anonymous usage stats) to understand how the product is used. You can disable non-essential cookies via your browser settings.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">06</div>
+      <div class="pg-section-content">
+        <h2>Data Retention</h2>
+        <p>We retain your personal data for as long as your account is active or as necessary to provide services. If you delete your account, we will remove your personal data within 30 days, except where retention is required for legal or compliance reasons.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">07</div>
+      <div class="pg-section-content">
+        <h2>Third-Party Services</h2>
+        <p>RefCase may use trusted third-party services for hosting, analytics, and authentication. These providers are contractually bound to protect your data and may not use it for their own purposes. Current third-party services include:</p>
+        <ul>
+          <li>Hosting infrastructure (e.g. GitHub Pages, Vercel, or equivalent)</li>
+          <li>Authentication providers (if applicable)</li>
+          <li>Anonymous analytics (e.g. Plausible or equivalent privacy-first tools)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">08</div>
+      <div class="pg-section-content">
+        <h2>Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <div class="pg-rights-grid">
+          <div class="pg-right-pill">
+            <div class="pg-right-pill-label">Access</div>
+            <p>Request a copy of the data we hold about you.</p>
+          </div>
+          <div class="pg-right-pill">
+            <div class="pg-right-pill-label">Correction</div>
+            <p>Request correction of any inaccurate data.</p>
+          </div>
+          <div class="pg-right-pill">
+            <div class="pg-right-pill-label">Deletion</div>
+            <p>Request deletion of your data — right to be forgotten.</p>
+          </div>
+          <div class="pg-right-pill">
+            <div class="pg-right-pill-label">Portability</div>
+            <p>Receive your data in a portable, readable format.</p>
+          </div>
+          <div class="pg-right-pill">
+            <div class="pg-right-pill-label">Objection</div>
+            <p>Object to how we process your personal data.</p>
+          </div>
+        </div>
+        <p style="margin-top:1rem">To exercise any of these rights, please contact us below.</p>
+      </div>
+    </div>
+
+    <div class="pg-section">
+      <div class="pg-section-num">09</div>
+      <div class="pg-section-content">
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting a notice in the application or by email. Continued use of RefCase after changes constitutes your acceptance of the updated policy.</p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="pg-contact-block">
+      <h3>Questions about your data?</h3>
+      <p>If you have any questions about this Privacy Policy or how your data is handled, we're happy to help.</p>
+      <a href="mailto:privacy@refcase.app" class="pg-contact-email">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <rect x="1" y="3" width="13" height="9" rx="2" stroke="white" stroke-width="1.3" fill="none"/>
+          <path d="M1 5l6.5 4L14 5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        privacy@refcase.app
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="rc-footer">
+    <div class="rc-footer-top">
+      <div class="rc-footer-brand">
+        <div class="rc-footer-logo">
+          <div class="rc-footer-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.7"/>
+              <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.7"/>
+              <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.3"/>
+            </svg>
+          </div>
+          RefCase
+        </div>
+        <p>The fastest way to earn buyer trust. Give every rep the right customer story, right when it counts.</p>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.refcase.io">Features</a></li>
+          <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+          <li><a href="https://refcase.io/about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a></li>
+          <li><a href="https://refcase.io/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://refcase.io/support.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/contact-8">Book a Demo</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf">Chrome Extension</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rc-footer-bottom">
+      <div class="rc-footer-copy">© 2026 by RefCase. All rights reserved.</div>
+      <div class="rc-footer-legal">
+        <a href="https://refcase.io/privacy.html">Privacy Policy</a>
+        <a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered fade-in for sections
+    const sections = document.querySelectorAll('.pg-section');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    sections.forEach(s => obs.observe(s));
+
+    // Nav shadow on scroll
+    const nav = document.querySelector('.rc-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 32px rgba(0,0,0,0.3)' : 'none';
+    }, { passive: true });
+  </script>
+</body>
+</html>

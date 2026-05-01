@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — RefCase</title>
+  <meta name="description" content="Everything you need to get the most out of RefCase." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Base ── */
+    body { background: var(--navy); color: rgba(255,255,255,0.75); }
+
+    /* ── Nav overrides ── */
+    .rc-nav {
+      background: rgba(10,22,40,0.92);
+      border-bottom-color: rgba(255,255,255,0.07);
+    }
+    .rc-nav-links a { color: rgba(255,255,255,0.5); }
+    .rc-nav-links a:hover { color: white; }
+    .rc-logo { color: white; }
+    .rc-nav-cta { background: rgba(255,255,255,0.1) !important; color: white !important; border: 1px solid rgba(255,255,255,0.15); }
+    .rc-nav-cta:hover { background: rgba(255,255,255,0.18) !important; }
+
+    /* ── Hero ── */
+    .sp-hero {
+      padding: 6rem 4rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .sp-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 450px;
+      background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .sp-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+    }
+    .sp-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+    }
+    .sp-hero h1 em { font-style: italic; color: var(--teal); }
+    .sp-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+    .sp-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13,148,136,0.1);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.78rem;
+      color: #5eead4;
+      font-weight: 500;
+    }
+    .sp-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(0.7); }
+    }
+
+    /* ── Layout ── */
+    .sp-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .sp-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 4rem 6rem;
+    }
+
+    /* ── Section label ── */
+    .sp-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ── Getting Started cards ── */
+    .sp-guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .sp-guide-card {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem;
+      transition: background 0.2s;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
+    }
+    .sp-guide-card.visible { opacity: 1; transform: none; }
+    .sp-guide-card:hover { background: rgba(255,255,255,0.06); }
+    .sp-guide-card:nth-child(1) { border-radius: 16px 0 0 0; }
+    .sp-guide-card:nth-child(2) { border-radius: 0 16px 0 0; }
+    .sp-guide-card:nth-child(3) { border-radius: 0 0 0 16px; }
+    .sp-guide-card:nth-child(4) { border-radius: 0 0 16px 0; }
+    .sp-guide-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.07);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .sp-guide-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
+    }
+    .sp-guide-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+    .sp-guide-card p:last-child { margin-bottom: 0; }
+    .sp-guide-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin: 0.5rem 0;
+    }
+    .sp-guide-card ul li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.55;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .sp-guide-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      opacity: 0.5;
+      font-size: 0.78rem;
+    }
+    .sp-guide-card strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+    /* ── FAQ ── */
+    .sp-faq-block { margin-bottom: 4rem; }
+    .sp-faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .sp-faq-item.visible { opacity: 1; transform: none; }
+    .sp-faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .sp-faq-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .sp-faq-trigger h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .sp-faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s, transform 0.3s;
+      color: rgba(255,255,255,0.5);
+    }
+    .sp-faq-item.open .sp-faq-icon {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+      transform: rotate(45deg);
+    }
+    .sp-faq-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .sp-faq-item.open .sp-faq-body { max-height: 400px; }
+    .sp-faq-body-inner {
+      padding-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+
+    /* ── Contact cards ── */
+    .sp-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    .sp-contact-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+    }
+    .sp-contact-card.visible { opacity: 1; transform: none; }
+    .sp-contact-card:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-3px); }
+    .sp-contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+    .sp-contact-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .sp-contact-card p {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .sp-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.87rem;
+      font-weight: 600;
+      font-family: 'Karla', sans-serif;
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sp-contact-link:hover { color: #5eead4; }
+
+    /* ── Roadmap banner ── */
+    .sp-roadmap {
+      background: linear-gradient(135deg, rgba(13,148,136,0.08) 0%, rgba(232,160,32,0.06) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .sp-roadmap h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.4rem;
+    }
+    .sp-roadmap p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      max-width: 460px;
+    }
+    .sp-roadmap-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--amber);
+      color: var(--navy);
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: 'Karla', sans-serif;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    .sp-roadmap-btn:hover { background: var(--amber-light); transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    .rc-footer { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    @media (max-width: 700px) {
+      .sp-hero { padding: 5rem 1.5rem 3rem; }
+      .sp-body { padding: 3rem 1.5rem 5rem; }
+      .sp-guide-grid { grid-template-columns: 1fr; }
+      .sp-guide-card:nth-child(n) { border-radius: 0; }
+      .sp-guide-card:first-child { border-radius: 16px 16px 0 0; }
+      .sp-guide-card:last-child  { border-radius: 0 0 16px 16px; }
+      .sp-contact-grid { grid-template-columns: 1fr; }
+      .sp-roadmap { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="rc-nav">
+    <a href="/" class="rc-logo">
+      <div class="rc-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none"/>
+          <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      RefCase
+    </a>
+    <ul class="rc-nav-links">
+      <li><a href="https://refcase.io/#how-it-works">Features</a></li>
+      <li><a href="https://refcase.io/#problems">Why RefCase</a></li>
+      <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+      <li><a href="https://refcase.io/about.html">About</a></li>
+      <li><a href="https://www.refcase.io/contact-8" class="rc-nav-cta">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sp-hero">
+    <span class="sp-eyebrow">Help Center</span>
+    <h1>How can we <em>help?</em></h1>
+    <p class="sp-hero-sub">Everything you need to get the most out of RefCase — from setup to your first matched reference.</p>
+    <div class="sp-status">
+      <div class="sp-status-dot"></div>
+      All systems operational
+    </div>
+  </section>
+
+  <div class="sp-divider"></div>
+
+  <div class="sp-body">
+
+    <!-- GETTING STARTED -->
+    <span class="sp-section-label">Getting Started</span>
+    <div class="sp-guide-grid">
+
+      <div class="sp-guide-card">
+        <div class="sp-guide-num">01</div>
+        <h3>What is RefCase?</h3>
+        <p>RefCase is a reference management platform built for SaaS sales reps. It lets you organise, search, and surface customer case studies so you can move faster in deals — attaching the right proof point to the right prospect at the right time.</p>
+      </div>
+
+      <div class="sp-guide-card">
+        <div class="sp-guide-num">02</div>
+        <h3>How to import your reference data</h3>
+        <p>Upload a CSV file containing your customer reference cases. Your file should include columns like:</p>
+        <ul>
+          <li><strong>Company name</strong> — the customer account</li>
+          <li><strong>Industry / Segment</strong> — for filtering by vertical</li>
+          <li><strong>Use case</strong> — what problem was solved</li>
+          <li><strong>Outcome / Result</strong> — quantified results</li>
+          <li><strong>Reference type</strong> — case study, logo, live call, etc.</li>
+        </ul>
+      </div>
+
+      <div class="sp-guide-card">
+        <div class="sp-guide-num">03</div>
+        <h3>Using search &amp; filters</h3>
+        <p>Use the search bar to find references by keyword — company name, industry, outcome, or use case. Combine search with category filters to narrow by segment, deal size, or reference type. Toggle between grid and list view to browse your way.</p>
+      </div>
+
+      <div class="sp-guide-card">
+        <div class="sp-guide-num">04</div>
+        <h3>The Chrome Extension</h3>
+        <p>RefCase floats in your browser so you never have to leave your sales tools. Use it while writing emails, during prospecting, or in a live demo to surface the right story without switching tabs.</p>
+        <p><a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf" style="color:var(--teal);font-weight:600;">Install the extension →</a></p>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <span class="sp-section-label">Frequently Asked Questions</span>
+    <div class="sp-faq-block">
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>What file formats does RefCase support?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            RefCase currently supports CSV files (.csv). Make sure your file uses standard comma-separated formatting with a header row. Excel files can be exported as CSV from Excel or Google Sheets before uploading.
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>Is my customer reference data private?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            Yes. Your reference data is private to you and your team. We never share, sell, or use your uploaded case data for any purpose other than powering your RefCase experience. See our <a href="https://refcase.io/privacy.html" style="color:var(--teal)">Privacy Policy</a> for full details.
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>How does the pitch generation feature work?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            When you open a reference detail, RefCase can generate a short sales pitch or talk track based on that account's industry, use case, and outcomes. This helps you quickly personalise your outreach or prep for a call — without starting from scratch.
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>Can I share a reference with a prospect directly?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            You can copy the pitch or case summary from the detail modal and paste it directly into your email, LinkedIn message, or CRM. Full shareable links to individual reference pages are on the roadmap.
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>How do I update or remove a reference?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            To update references, edit your CSV file and re-upload it. To remove a specific reference, delete that row from your CSV and re-import. In-app editing is a future feature we're actively building.
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-faq-item">
+        <div class="sp-faq-trigger" onclick="toggleFaq(this)">
+          <h3>Does RefCase integrate with Salesforce or other CRMs?</h3>
+          <div class="sp-faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sp-faq-body">
+          <div class="sp-faq-body-inner">
+            Native CRM integrations (Salesforce, HubSpot) are on the roadmap. For now, the pitch generation output can be manually copied into any CRM or outreach tool. We'd love to hear your specific integration needs — email us.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+    <span class="sp-section-label">Contact &amp; Feedback</span>
+    <div class="sp-contact-grid">
+
+      <div class="sp-contact-card">
+        <div class="sp-contact-icon" style="background:rgba(13,148,136,0.12)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="12" rx="2" stroke="#0d9488" stroke-width="1.5" fill="none"/>
+            <path d="M2 7l8 5 8-5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Email Support</h3>
+        <p>Have a question, bug report, or feature request? Reach out directly — we typically respond within 1 business day.</p>
+        <a href="mailto:support@refcase.app" class="sp-contact-link">
+          support@refcase.app
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="sp-contact-card">
+        <div class="sp-contact-icon" style="background:rgba(232,160,32,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="#e8a020" stroke-width="1.5" fill="none"/>
+            <path d="M10 6v5" stroke="#e8a020" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="10" cy="14" r="0.8" fill="#e8a020"/>
+          </svg>
+        </div>
+        <h3>Privacy Questions</h3>
+        <p>For questions about your data, GDPR rights, or anything related to how we handle your information, contact our privacy team.</p>
+        <a href="mailto:privacy@refcase.app" class="sp-contact-link">
+          privacy@refcase.app
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="sp-roadmap">
+      <div>
+        <h3>Feature Requests &amp; Roadmap</h3>
+        <p>RefCase is actively being developed. If there's a feature that would make your workflow faster or a use case we haven't thought of, we want to hear it. The best features come from real AE feedback.</p>
+      </div>
+      <a href="mailto:support@refcase.app" class="sp-roadmap-btn">
+        Share your idea
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="rc-footer">
+    <div class="rc-footer-top">
+      <div class="rc-footer-brand">
+        <div class="rc-footer-logo">
+          <div class="rc-footer-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.7"/>
+              <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.7"/>
+              <line x1="2" y1="9" x2="16" y2="9" stroke="white" stroke-width="1.5" stroke-opacity="0.3"/>
+            </svg>
+          </div>
+          RefCase
+        </div>
+        <p>The fastest way to earn buyer trust. Give every rep the right customer story, right when it counts.</p>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.refcase.io">Features</a></li>
+          <li><a href="https://www.refcase.io/pricing-plans/list">Pricing</a></li>
+          <li><a href="https://refcase.io/about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a></li>
+          <li><a href="https://refcase.io/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://refcase.io/support.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/contact-8">Book a Demo</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf">Chrome Extension</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rc-footer-bottom">
+      <div class="rc-footer-copy">© 2026 by RefCase. All rights reserved.</div>
+      <div class="rc-footer-legal">
+        <a href="https://refcase.io/privacy.html">Privacy Policy</a>
+        <a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    function toggleFaq(trigger) {
+      const item = trigger.closest('.sp-faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Scroll fade-in
+    const fadeEls = document.querySelectorAll('.sp-guide-card, .sp-faq-item, .sp-contact-card');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    fadeEls.forEach(el => obs.observe(el));
+
+    // Nav shadow
+    const nav = document.querySelector('.rc-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 32px rgba(0,0,0,0.35)' : 'none';
+    }, { passive: true });
+  </script>
+</body>
+</html>
