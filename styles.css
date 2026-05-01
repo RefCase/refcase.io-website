@@ -823,14 +823,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   position: relative;
 }
 .rc-steps::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  left: calc(16.66% + 1rem);
-  right: calc(16.66% + 1rem);
-  height: 1px;
-  background: linear-gradient(90deg, rgba(232,160,32,0.4), rgba(13,148,136,0.4));
-  z-index: 0;
+  display: none;
 }
 .rc-step { position: relative; z-index: 1; }
 .rc-step-num {
