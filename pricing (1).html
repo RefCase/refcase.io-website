@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — RefCase</title>
+  <meta name="description" content="RefCase pricing is tailored to your team. Get in touch and we'll find the right setup together." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ─── Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a1628;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Karla', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    :root {
+      --navy:   #0a1628;
+      --navy2:  #0f1e35;
+      --amber:  #e8a020;
+      --amber2: #f5c55a;
+      --teal:   #0d9488;
+      --teal2:  #5eead4;
+      --violet: #C471ED;
+      --violet2:#a855c8;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(0.7); }
+    }
+
+    /* ─── NAV ─── */
+    .rc-nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 64px;
+      background: rgba(10,22,40,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: box-shadow 0.3s;
+    }
+    .rc-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: white; letter-spacing: -0.02em;
+    }
+    .rc-logo img { height: 30px; width: auto; display: block; }
+    .rc-nav-links {
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .rc-nav-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .rc-nav-links a:hover { color: white; }
+    .rc-nav-cta {
+      background: rgba(255,255,255,0.08) !important;
+      color: white !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: background 0.2s !important;
+    }
+    .rc-nav-cta:hover { background: rgba(255,255,255,0.16) !important; }
+
+    /* ─── HERO ─── */
+    .pr-hero {
+      position: relative;
+      padding: 7rem 2rem 5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .pr-hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,79,224,0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(13,148,136,0.08) 0%, transparent 60%);
+    }
+    .pr-hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .pr-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .pr-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 600; letter-spacing: -0.03em; line-height: 1.02;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      animation: fadeUp 0.7s ease both;
+    }
+    .pr-hero h1 em { font-style: italic; color: var(--violet); }
+    .pr-hero-sub {
+      font-size: 1.1rem; line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      max-width: 520px; margin: 0 auto 2.5rem;
+      position: relative;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .pr-hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.35);
+      border-radius: 100px;
+      padding: 0.55rem 1.35rem;
+      font-size: 0.85rem; font-weight: 600; color: #5eead4;
+      position: relative;
+      animation: fadeUp 0.7s 0.2s ease both;
+      letter-spacing: 0.01em;
+    }
+    .pr-hero-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal2);
+      box-shadow: 0 0 8px rgba(94,234,212,0.7);
+      animation: pulse 2.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    /* ─── DIVIDER ─── */
+    .pr-divider {
+      width: 100%; height: 1px;
+      background: rgba(255,255,255,0.07);
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    /* ─── BODY WRAP ─── */
+    .pr-body { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 7rem; }
+
+    /* ─── WHAT YOU GET ─── */
+    .pr-section-label {
+      display: block;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2rem;
+    }
+
+    .pr-includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 5rem;
+    }
+    .pr-include-card {
+      background: rgba(255,255,255,0.025);
+      padding: 2.25rem 2rem;
+      transition: background 0.2s;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
+    }
+    .pr-include-card.visible { opacity: 1; transform: none; }
+    .pr-include-card:hover { background: rgba(255,255,255,0.05); }
+    .pr-include-card:first-child { border-radius: 20px 0 0 0; }
+    .pr-include-card:nth-child(3) { border-radius: 0 20px 0 0; }
+    .pr-include-card:nth-child(4) { border-radius: 0 0 0 20px; }
+    .pr-include-card:last-child { border-radius: 0 0 20px 0; }
+
+    .pr-include-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+    .pr-include-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: white; letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .pr-include-card p {
+      font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.65;
+    }
+
+    /* ─── CTA BLOCK ─── */
+    .pr-cta-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    /* Main CTA */
+    .pr-cta-main {
+      background: linear-gradient(140deg, #12223f 0%, #0f1a32 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .pr-cta-main.visible { opacity: 1; transform: none; }
+    .pr-cta-main::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(107,79,224,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pr-cta-main-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(196,113,237,0.12);
+      border: 1px solid rgba(196,113,237,0.25);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 1.5rem;
+    }
+    .pr-cta-main h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 600;
+      color: white; letter-spacing: -0.02em; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .pr-cta-main h2 em { font-style: italic; color: var(--violet); }
+    .pr-cta-main p {
+      font-size: 0.92rem; color: rgba(255,255,255,0.5);
+      line-height: 1.7; margin-bottom: 2rem; max-width: 380px;
+    }
+    .pr-btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--violet); color: white;
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.92rem; font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .pr-btn-primary:hover {
+      background: #b060d8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,113,237,0.35);
+    }
+    .pr-btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: rgba(255,255,255,0.6);
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.92rem; font-weight: 600;
+      border: 1.5px solid rgba(255,255,255,0.14);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .pr-btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: white; }
+
+    /* Chrome extension card */
+    .pr-cta-ext {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 3rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s 0.1s ease, transform 0.5s 0.1s ease;
+    }
+    .pr-cta-ext.visible { opacity: 1; transform: none; }
+    .pr-cta-ext::before {
+      content: '';
+      position: absolute; bottom: -40px; left: -40px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pr-cta-ext-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(13,148,136,0.1);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--teal2);
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .pr-cta-ext h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 600;
+      color: white; letter-spacing: -0.02em; line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .pr-cta-ext h3 em { font-style: italic; color: var(--teal2); }
+    .pr-cta-ext p {
+      font-size: 0.88rem; color: rgba(255,255,255,0.45);
+      line-height: 1.65; margin-bottom: 2rem;
+    }
+    .pr-btn-teal {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(13,148,136,0.15);
+      border: 1px solid rgba(13,148,136,0.3);
+      color: var(--teal2);
+      padding: 0.8rem 1.75rem; border-radius: 8px;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      width: fit-content;
+    }
+    .pr-btn-teal:hover {
+      background: rgba(13,148,136,0.25);
+      border-color: rgba(13,148,136,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ─── WHAT'S INCLUDED LIST ─── */
+    .pr-included-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 5rem;
+    }
+    .pr-included-item {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: border-color 0.2s;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.2s;
+    }
+    .pr-included-item.visible { opacity: 1; transform: none; }
+    .pr-included-item:hover { border-color: rgba(255,255,255,0.12); }
+    .pr-check {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .pr-included-item-text h4 {
+      font-size: 0.9rem; font-weight: 600; color: white; margin-bottom: 0.2rem;
+    }
+    .pr-included-item-text p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5;
+    }
+
+    /* ─── BOTTOM QUOTE ─── */
+    .pr-quote {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .pr-quote.visible { opacity: 1; transform: none; }
+    .pr-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; line-height: 0.4;
+      color: var(--violet); opacity: 0.3;
+      display: block; margin-bottom: 1.5rem;
+    }
+    .pr-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 500; font-style: italic;
+      color: rgba(255,255,255,0.7);
+      max-width: 680px; margin: 0 auto 1.5rem;
+      line-height: 1.4; letter-spacing: -0.01em;
+    }
+    .pr-quote-attr {
+      font-size: 0.82rem; color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── FOOTER ─── */
+    .rc-footer {
+      background: #06101f;
+      padding: 3.5rem 2.5rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .rc-footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 2rem; max-width: 1100px; margin-left: auto; margin-right: auto;
+    }
+    .rc-footer-brand p {
+      font-size: 0.87rem; color: rgba(255,255,255,0.3);
+      line-height: 1.65; margin-top: 0.85rem; max-width: 260px;
+    }
+    .rc-footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; color: white;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .rc-footer-logo img { height: 26px; width: auto; }
+    .rc-footer-logo-icon {
+      width: 28px; height: 28px; background: rgba(255,255,255,0.08);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    }
+    .rc-footer-col h4 {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 1rem;
+    }
+    .rc-footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+    .rc-footer-col a { font-size: 0.87rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .rc-footer-col a:hover { color: rgba(255,255,255,0.85); }
+    .rc-footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .rc-footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.22); }
+    .rc-footer-legal { display: flex; gap: 1.5rem; }
+    .rc-footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,0.22); transition: color 0.2s; }
+    .rc-footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .pr-includes-grid { grid-template-columns: 1fr 1fr; }
+      .pr-include-card:nth-child(3) { border-radius: 0; }
+      .pr-cta-wrap { grid-template-columns: 1fr; }
+      .pr-included-row { grid-template-columns: 1fr; }
+      .rc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .rc-footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .pr-includes-grid { grid-template-columns: 1fr; }
+      .pr-include-card:nth-child(n) { border-radius: 0; }
+      .pr-include-card:first-child { border-radius: 20px 20px 0 0; }
+      .pr-include-card:last-child  { border-radius: 0 0 20px 20px; }
+      .rc-nav-links li:not(:last-child) { display: none; }
+      .rc-footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="rc-nav" id="nav">
+    <a href="https://refcase.io/" class="rc-logo">
+      <img src="https://refcase.io/refcase_logo.png" alt="RefCase"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <span style="display:none;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:white">
+        <span class="rc-footer-logo-icon">
+          <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.8"/>
+            <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.8"/>
+          </svg>
+        </span>
+        RefCase
+      </span>
+    </a>
+    <ul class="rc-nav-links">
+      <li><a href="https://refcase.io/#how-it-works">Features</a></li>
+      <li><a href="https://refcase.io/#problems">Why RefCase</a></li>
+      <li><a href="https://refcase.io/pricing.html" style="color:white;font-weight:600">Pricing</a></li>
+      <li><a href="https://refcase.io/about.html">About</a></li>
+      <li><a href="https://www.refcase.io/contact-8" class="rc-nav-cta">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pr-hero">
+    <div class="pr-hero-glow"></div>
+    <div class="pr-hero-dots"></div>
+    <span class="pr-eyebrow">Pricing</span>
+    <h1>Built around<br><em>your team</em></h1>
+    <p class="pr-hero-sub">Starting from <strong style="color:white;font-weight:700">€15 per user / month</strong> — with team plans that scale to your company size. Get in touch and we'll find the right fit together.</p>
+    <div class="pr-hero-badge">
+      <div class="pr-hero-badge-dot"></div>
+      Reach out and we'll get back to you within 1 business day
+    </div>
+  </section>
+
+  <div class="pr-divider"></div>
+
+  <div class="pr-body">
+
+    <!-- CTA CARDS -->
+    <span class="pr-section-label">Get started</span>
+    <div class="pr-cta-wrap">
+
+      <!-- Main: book a demo -->
+      <div class="pr-cta-main" id="cta-main">
+        <div class="pr-cta-main-tag">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="3" fill="#C471ED"/>
+          </svg>
+          Recommended
+        </div>
+        <h2>Let's talk about<br><em>your team</em></h2>
+        <p>Every sales team has different reference needs — different verticals, deal sizes, GTM motions. Tell us about yours and we'll show you how RefCase fits in. No pressure, no hard sell.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://www.refcase.io/contact-8" class="pr-btn-primary">
+            Book a Demo
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="mailto:hello@refcase.app" class="pr-btn-secondary">Send us an email</a>
+        </div>
+      </div>
+
+      <!-- Secondary: chrome extension -->
+      <div class="pr-cta-ext" id="cta-ext">
+        <div>
+          <div class="pr-cta-ext-tag">
+            <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
+              <circle cx="3.5" cy="3.5" r="3" fill="#5eead4"/>
+            </svg>
+            Free to try
+          </div>
+          <h3>Start with the<br><em>extension</em></h3>
+          <p>Install the RefCase Chrome extension and see it in action inside your own browser — no setup, no commitment.</p>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf" class="pr-btn-teal" target="_blank">
+          Install Chrome Extension
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 11.5l9-9M11.5 11.5V2.5H2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <span class="pr-section-label">What's included</span>
+    <div class="pr-includes-grid">
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(107,79,224,0.12)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="#C471ED" stroke-width="1.5" fill="none"/>
+            <path d="M10 6v4l2.5 2.5" stroke="#C471ED" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Magic Match</h3>
+        <p>AI scrapes your prospect's website and surfaces the most relevant reference cases — including direct competitor replacements — in seconds.</p>
+      </div>
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(13,148,136,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="3" y="3" width="14" height="14" rx="3" stroke="#0d9488" stroke-width="1.5" fill="none"/>
+            <path d="M7 10l2.5 2.5L13 7" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Smart Filtering</h3>
+        <p>Search and filter your entire reference library by industry, segment, use case, outcome, and more — across your whole team.</p>
+      </div>
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(232,160,32,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M4 4h12v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" stroke="#e8a020" stroke-width="1.5" fill="none"/>
+            <path d="M8 9l1.5 1.5L12 7" stroke="#e8a020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Pitch Generation</h3>
+        <p>Turn any reference into a ready-to-send talk track or email snippet. Tailored to the prospect, ready in one click.</p>
+      </div>
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(107,79,224,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="6" width="16" height="11" rx="2" stroke="#C471ED" stroke-width="1.5" fill="none"/>
+            <path d="M6 6V5a4 4 0 0 1 8 0v1" stroke="#C471ED" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Chrome Extension</h3>
+        <p>RefCase floats in your browser. Use it while writing emails, prospecting in Sales Nav, or presenting — without switching tabs.</p>
+      </div>
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(13,148,136,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="7" cy="7" r="4" stroke="#0d9488" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="3" stroke="#0d9488" stroke-width="1.5" fill="none"/>
+            <path d="M10.5 10.5l1 1" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Team Access</h3>
+        <p>The whole team — BDRs, AEs, SEs — works from the same library. One source of truth for every reference case.</p>
+      </div>
+
+      <div class="pr-include-card">
+        <div class="pr-include-icon" style="background:rgba(232,160,32,0.1)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2l2.4 5 5.6.8-4 3.9.9 5.5L10 14.5l-4.9 2.7.9-5.5L2 7.8l5.6-.8L10 2z" stroke="#e8a020" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Onboarding &amp; Setup</h3>
+        <p>We help you import your existing reference cases, structure your library, and get your team up to speed — properly.</p>
+      </div>
+
+    </div>
+
+    <!-- WHAT'S IN IT FOR YOU -->
+    <span class="pr-section-label">Why teams choose RefCase</span>
+    <div class="pr-included-row">
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>No more Slack scrambles</h4>
+          <p>The right reference, found in seconds — not 10 minutes of channel diving.</p>
+        </div>
+      </div>
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>New reps ramp faster</h4>
+          <p>BDRs and junior AEs get access to every customer win from day one.</p>
+        </div>
+      </div>
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>Win more competitive deals</h4>
+          <p>Surface the exact customer who replaced your prospect's current vendor.</p>
+        </div>
+      </div>
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>Works where you work</h4>
+          <p>In your browser, always on — no tab switching, no context loss mid-call.</p>
+        </div>
+      </div>
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>One library, whole team</h4>
+          <p>No more siloed knowledge. Everyone references from the same single source of truth.</p>
+        </div>
+      </div>
+      <div class="pr-included-item">
+        <div class="pr-check">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2.5 2.5L8 3" stroke="#0d9488" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pr-included-item-text">
+          <h4>Setup in a day</h4>
+          <p>We handle onboarding. Your team is live before the week is out.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="rc-footer">
+    <div class="rc-footer-top">
+      <div class="rc-footer-brand">
+        <div class="rc-footer-logo">
+          <img src="https://refcase.io/refcase_logo.png" alt="RefCase"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span style="display:none;align-items:center;gap:8px">
+            <span class="rc-footer-logo-icon">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                <rect x="2" y="5" width="14" height="11" rx="2" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.7"/>
+                <path d="M6 5V4C6 2.9 6.9 2 8 2H10C11.1 2 12 2.9 12 4V5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.7"/>
+              </svg>
+            </span>
+            RefCase
+          </span>
+        </div>
+        <p>The fastest way to earn buyer trust. Give every rep the right customer story, right when it counts.</p>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://refcase.io">Features</a></li>
+          <li><a href="https://refcase.io/pricing.html">Pricing</a></li>
+          <li><a href="https://refcase.io/about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://refcase.io/support.html">Support</a></li>
+          <li><a href="https://refcase.io/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="rc-footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="https://www.refcase.io/contact-8">Book a Demo</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/refcase/ggefjeapiijanpcfjkcicklagkjidnmf">Chrome Extension</a></li>
+          <li><a href="mailto:hello@refcase.app">hello@refcase.app</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rc-footer-bottom">
+      <div class="rc-footer-copy">© 2026 by RefCase. All rights reserved.</div>
+      <div class="rc-footer-legal">
+        <a href="https://refcase.io/privacy.html">Privacy Policy</a>
+        <a href="https://www.refcase.io/copy-of-privacy-policy">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20 ? '0 2px 32px rgba(0,0,0,0.4)' : 'none';
+    }, { passive: true });
+
+    // Scroll fade-in
+    const fadeEls = document.querySelectorAll(
+      '.pr-include-card, .pr-included-item, .pr-cta-main, .pr-cta-ext, .pr-quote'
+    );
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 65);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
