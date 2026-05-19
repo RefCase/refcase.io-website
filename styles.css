@@ -1643,3 +1643,5 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .rc-outcome-row { grid-template-columns: 1fr; }
   .rc-msg-col { max-width: 85%; }
 }
+
+.rc-hamburger { display: none; }
