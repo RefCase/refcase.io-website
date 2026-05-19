@@ -1160,7 +1160,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     gap: 0;
     z-index: 99;
   }
-  .rc-nav-links.open li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .rc-nav-links.open li {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
   .rc-nav-links.open a {
     display: block;
     padding: 0.9rem 0;
