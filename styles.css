@@ -1154,29 +1154,31 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     position: absolute;
     top: 64px;
     left: 0; right: 0;
-    background: rgba(10,22,40,0.97);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--navy);
+    border-bottom: 3px solid var(--amber);
     padding: 1.25rem 1.5rem 1.75rem;
     gap: 0;
     z-index: 99;
   }
-  .rc-nav-links.open li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .rc-nav-links.open li { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .rc-nav-links.open a {
     display: block;
     padding: 0.9rem 0;
     font-size: 1rem;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.8) !important;
   }
   .rc-nav-links.open .rc-nav-cta {
     margin-top: 0.75rem;
     text-align: center;
-    background: rgba(255,255,255,0.1) !important;
+    background: var(--amber) !important;
+    color: var(--navy) !important;
     border-radius: 8px !important;
     padding: 0.75rem !important;
+    border: none !important;
   }
   .rc-hamburger { display: flex; }
   .rc-nav { position: relative; }
+  .rc-footer-top { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
